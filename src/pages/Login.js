@@ -94,7 +94,7 @@ function Login() {
           </div>
           <main className="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
             <div className="w-full">
-              <h1 className='text-gray-400 font-bold text-2xl text-center mb-5 underline'>Desi S-Mart Admin Dashboard</h1>
+              <h1 className='text-gray-400 font-bold text-2xl text-center mb-5 underline'>TheVestto Admin Dashboard</h1>
               {/* <h1 className="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">Login</h1> */}
               {error && <p className="text-red-500">{error}</p>}
               <Label>
