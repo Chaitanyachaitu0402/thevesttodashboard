@@ -48,7 +48,7 @@ const ProductsAll = () => {
     setLoading(true); // Start loading
     try {
       const accessToken = localStorage.getItem('accessToken');
-      const response = await axios.get('https://thevesttobackend.vercel.app/web/product/get-all-product', {
+      const response = await axios.post('https://thevesttobackend.vercel.app/web/pincode/get-all-pincode', {
         headers: {
           Authorization: `Bearer ${accessToken}`,
           'Content-Type': 'application/json',
@@ -139,25 +139,10 @@ const ProductsAll = () => {
     }
   };
 
-  const handleGetFromEposNow = async () => {
-    try {
-      const accessToken = localStorage.getItem('accessToken');
-      await axios.post('https://thevesttobackend.vercel.app/eposedata/create-eposedata', {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
-        },
-      });
-      alert('Successfully fetched the data from EposNow!');
-    } catch (error) {
-      console.error("Error fetching from EposNow:", error);
-      alert('An error occurred while fetching data from EposNow.');
-    }
-  };
 
   return (
     <div>
-      <PageTitle>All Products</PageTitle>
+      <PageTitle>Premium Products</PageTitle>
 
       {/* <Button onClick={handleGetFromEposNow} className="mb-4">
         Get from EposNow

@@ -33,11 +33,11 @@ const Orders = () => {
 
   return (
     <div>
-      <PageTitle>Orders</PageTitle>
+      <PageTitle><p className="font-bold"></p></PageTitle>
 
       {/* Breadcum */}
       <div className="flex text-gray-800 dark:text-gray-300">
-        <div className="flex items-center text-purple-600">
+        <div className="flex items-center font-bold text-black dark:text-gray-300">
           <Icon className="w-5 h-5" aria-hidden="true" icon={HomeIcon} />
           <NavLink exact to="/app/dashboard" className="mx-2">
             Dashboard
@@ -51,7 +51,7 @@ const Orders = () => {
       <Card className="mt-5 mb-5 shadow-md">
         <CardBody>
           <div className="flex items-center">
-            <p className="text-2xl text-gray-600 dark:text-gray-400">
+            <p className="text-2xl font-bold text-black dark:text-white">
               All Orders
             </p>
             </div>

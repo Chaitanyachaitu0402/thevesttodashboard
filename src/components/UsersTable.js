@@ -28,7 +28,7 @@ const UsersTable = ({ resultsPerPage, filter }) => {
 
     try {
       const response = await axios.post(
-        `http://localhost:3000/user/get-all-user`,
+        `https://thevesttobackend.vercel.app/web/user/get-all-user`,
         { page, resultsPerPage, filter }, // Add any necessary data here
         {
           headers: {

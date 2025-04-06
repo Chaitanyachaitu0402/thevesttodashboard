@@ -4,7 +4,7 @@ import { NavLink, Route } from "react-router-dom";
 import * as Icons from "../../icons";
 import SidebarSubmenu from "./SidebarSubmenu";
 import { Button } from "@windmill/react-ui";
-import Logo from "../../assets/logo/Logo_black.png"
+import Logo from "../../assets/logo/logo2.png"
 
 function Icon({ icon, ...props }) {
   const Icon = Icons[icon];
@@ -18,7 +18,7 @@ function SidebarContent() {
         className="ml-6 text-lg flex justify-center"
         href="#"
       >
-        <img className="w-40" src={Logo} />
+        <img className="mr-5 mt-10" src={Logo} />
       </a>
       <ul className="mt-6">
         {routes.slice(0, -3).map((route) =>

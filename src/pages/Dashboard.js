@@ -28,7 +28,7 @@ function Dashboard() {
       const userId = localStorage.getItem('user_id');
       console.log(userId);
       try {
-        const response = await axios.post(`http://localhost:3000/user/count-user-details`, { user_id: userId },
+        const response = await axios.post(`https://thevesttobackend.vercel.app/web/user/count-user`, { user_id: userId },
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -46,7 +46,7 @@ function Dashboard() {
       const accessToken = localStorage.getItem('accessToken');
       const userId = localStorage.getItem('user_id');
       try {
-        const response = await axios.post(`http://localhost:3000/order/count-all-orders`, { user_id: userId },
+        const response = await axios.post(`https://thevesttobackend.vercel.app/web/order/count-all-orders`, { user_id: userId },
            {
           headers: {
             Authorization: `Bearer ${accessToken}`,

@@ -16,20 +16,24 @@ const routes = [
     icon: "CartIcon",
     name: "Orders",
   },
-  {
-    icon: "TruckIcon",
-    name: "Products",
-    routes: [
-      {
-        path: "/app/all-products",
-        name: "All Products",
-      },
-      {
-        path: "/app/add-product",
-        name: "Add Product",
-      },
-    ],
-  },
+  // {
+  //   icon: "TruckIcon",
+  //   name: "Products",
+  //   routes: [
+  //     {
+  //       path: "/app/all-products",
+  //       name: "All Section",
+  //     },
+  //     {
+  //       path: "/app/premium",
+  //       name: "Premium Section",
+  //     },
+  //     {
+  //       path: "/app/add-product",
+  //       name: "Add Product",
+  //     },
+  //   ],
+  // },
   {
     path: "/app/customers",
     icon: "GroupIcon",
@@ -38,7 +42,7 @@ const routes = [
   // {
   //   path: "/app/chats",
   //   icon: "ChatIcon",
-  //   name: "Chats",
+  //   name: "Pincodes and Delivery Charges",
   // },
   {
     path: "/app/manage-profile",
@@ -53,7 +57,7 @@ const routes = [
   {
     path: "/login",
     icon: "OutlineLogoutIcon",
-    name: "Logout",
+    name: "",
   },
 ];
 

@@ -17,7 +17,7 @@ function Login() {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:3000/user/login-user', {
+      const response = await fetch('https://thevesttobackend.vercel.app/web/user/login-user', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ function Login() {
 
   const getLoginUserData = async (accessToken) => {
     try {
-      const response = await fetch('http://localhost:3000/user/get-logged-in-user-details', {
+      const response = await fetch('https://thevesttobackend.vercel.app/web/user/get-logged-in-user-details', {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -56,8 +56,10 @@ function Login() {
       if (response.ok) {
         localStorage.setItem('userData', JSON.stringify(result.data));
         localStorage.setItem('userName', JSON.stringify(result.data.user_name));
+        localStorage.setItem('Email', JSON.stringify(result.data.email));
         localStorage.setItem('user_id', JSON.stringify(result.data.user_id));
-        localStorage.setItem('Address', JSON.stringify(result.data.Address));
+        localStorage.setItem('Password', JSON.stringify(result.data.password));
+        // localStorage.setItem('Address', JSON.stringify(result.data.Address));
         localStorage.setItem('Role', JSON.stringify(result.data.role));
         localStorage.setItem('grocery_userLoggedIn', true);
         history.push('/app'); // Redirect after successful login

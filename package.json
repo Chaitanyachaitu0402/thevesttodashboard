@@ -17,13 +17,16 @@
     "faker": "4.1.0",
     "http-proxy": "^1.18.1",
     "http-proxy-middleware": "^3.0.0",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.8.2",
     "react": "^16.13.1",
     "react-chartjs-2": "2.9.0",
     "react-dom": "^16.13.1",
     "react-focus-lock": "2.4.0",
     "react-router-dom": "5.2.0",
     "react-scripts": "^5.0.1",
-    "react-transition-group": "4.4.1"
+    "react-transition-group": "4.4.1",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^8.0.1",

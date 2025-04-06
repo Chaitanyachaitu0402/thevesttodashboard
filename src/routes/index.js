@@ -12,6 +12,7 @@ const Profile = lazy(() => import("../pages/Profile"));
 const Settings = lazy(() => import("../pages/Settings"));
 const Page404 = lazy(() => import("../pages/404"));
 const Blank = lazy(() => import("../pages/Blank"));
+const Premium = lazy(() => import("../pages/Premium"));
 
 /**
  * ⚠ These are internal routes!
@@ -67,6 +68,10 @@ const routes = [
   {
     path: "/blank",
     component: Blank,
+  },
+  {
+    path: "/premium",
+    component: Premium,
   },
 ];
 

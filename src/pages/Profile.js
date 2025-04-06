@@ -10,43 +10,16 @@ const Profile = () => {
     mobile_number: "",
     Address: "",
   });
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchProfileData();
+    const storedData = {
+      user_name: localStorage.getItem('user_name') || "",
+      email: localStorage.getItem('email') || "",
+      mobile_number: localStorage.getItem('mobile_number') || "",
+      Address: localStorage.getItem('Address') || "",
+    };
+    setProfileData(storedData);
   }, []);
-
-  const fetchProfileData = async () => {
-    const accessToken = localStorage.getItem('accessToken');
-    const userId = localStorage.getItem('user_id');
-    console.log("Fetching profile data for user_id:", userId);
-
-    try {
-      const response = await axios.post(
-        `http://localhost:3000/user/get-user-by-id`,
-        { user_id: userId },
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-            Accept: 'application/json,text/plain,*/*',
-            'Content-Type': 'application/json;charset=UTF-8'
-          },
-        }
-      );
-
-      console.log("Response received:", response);
-      if (response.status === 200 && response.data.data) {
-        // const { user_name, email, mobile_number, Address } = response.data.data;
-        // setProfileData({ user_name, email, mobile_number, Address });
-      }
-    } catch (error) {
-      console.error("Error fetching profile:", error);
-      setError('An error occurred while fetching profile data.');
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -58,13 +31,14 @@ const Profile = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+
+    // Update the profile data in the database
     const accessToken = localStorage.getItem('accessToken');
     const userId = localStorage.getItem('user_id');
-    console.log("Updating profile data for user_id:", userId, "with data:", profileData);
 
     try {
       const response = await axios.post(
-        `http://localhost:3000/user/update-user`,
+        `https://thevesttobackend.vercel.app/web/user/update-user`,
         { ...profileData, user_id: userId },
         {
           headers: {
@@ -74,21 +48,14 @@ const Profile = () => {
         }
       );
 
-      console.log("Profile updated successfully:", response.data);
-      // Optionally, you can show a success message or redirect after successful update
+      if (response.status === 200) {
+        alert('Profile updated successfully!');
+      }
     } catch (error) {
       console.error("Error updating profile:", error);
-      setError('An error occurred while updating profile data.');
+      alert('An error occurred while updating profile data.');
     }
   };
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>{error}</div>;
-  }
 
   return (
     <div>
@@ -128,7 +95,7 @@ const Profile = () => {
               required
             />
           </Label>
-          <Label className="mt-4">
+          {/* <Label className="mt-4">
             <span>Address</span>
             <Input
               className="mt-1"
@@ -138,7 +105,7 @@ const Profile = () => {
               onChange={handleInputChange}
               required
             />
-          </Label>
+          </Label> */}
           <Button type="submit" className="mt-4">
             Save Changes
           </Button>
