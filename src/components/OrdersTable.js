@@ -479,7 +479,7 @@ const OrdersTable = ({ resultsPerPage }) => {
                     </Badge>
                   </TableCell>
                   <TableCell>
-                    <span className="text-2xl text-black dark:text-white">{new Date(order.ordered_date).toLocaleDateString()}</span>
+                    <span className="text-2xl text-black dark:text-white">{(order.ordered_date)}</span>
                   </TableCell>
                   <TableCell>
                     <select
