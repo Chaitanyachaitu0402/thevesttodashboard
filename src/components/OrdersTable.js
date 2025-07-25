@@ -330,7 +330,7 @@ const OrdersTable = ({ resultsPerPage }) => {
 
     try {
       const response = await axios.post(
-        `https://thevesttobackend.vercel.app/web/order/get-all-order`,
+        ` https://12f7aa7bfa1a.ngrok-free.app/web/order/get-all-order`,
         { page, resultsPerPage },
         {
           headers: {
@@ -517,7 +517,7 @@ const OrdersTable = ({ resultsPerPage }) => {
                               onClick={(e) => e.stopPropagation()}
                             >
                               <img
-                                src={`https://thevesttobackend.vercel.app/storege/userdp/${visibleScreenshot.screenshot}`}
+                                src={`${visibleScreenshot.screenshot}`}
                                 alt="Screenshot"
                                 className="w-64 rounded-lg"
                               />
