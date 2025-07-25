@@ -330,7 +330,7 @@ const OrdersTable = ({ resultsPerPage }) => {
 
     try {
       const response = await axios.post(
-        ` https://12f7aa7bfa1a.ngrok-free.app/web/order/get-all-order`,
+        `https://thevesttobackend.vercel.app/web/order/get-all-order`,
         { page, resultsPerPage },
         {
           headers: {
