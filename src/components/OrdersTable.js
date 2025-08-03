@@ -541,6 +541,7 @@ const OrdersTable = ({ resultsPerPage }) => {
                       <p><strong>Product:</strong> {getFirstValue(order.products)}</p>
                       <p><strong>Quantity:</strong> {getFirstValue(order.quantity)}</p>
                       <p><strong>Size:</strong> {getFirstValue(order.size)}</p>
+                      <p><strong>Color:</strong> {getFirstValue(order.user_name)}</p>
                     </div>
                   </TableCell>
                 </TableRow>
